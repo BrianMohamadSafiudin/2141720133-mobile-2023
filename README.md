@@ -1,4 +1,7 @@
 # 2141720133-mobile-2023
 
-## Brian Mohamad Safiudin
-## TI-3F 2141720133
+### Nama : Brian Mohamad Safiudin
+### NIM : 2141720133
+### Kelas : TI-3F
+
+# Flutter Project 
