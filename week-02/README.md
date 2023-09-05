@@ -41,9 +41,9 @@
 
 ## Soal 4 (Google Slide)
 #### Buatlah slide yang berisi penjelasan dan contoh eksekusi kode tentang perbedaan Null Safety dan Late variabel ! (Khusus soal ini kelompok berupa link google slide)
-![Screenshot hello_world](docs/soal4.png)
-![Screenshot hello_world](docs/ns.png)
-![Screenshot hello_world](docs/lv.png)
+![Screenshot soal4](docs/soal4.png)
+![Screenshot ns](docs/ns.png)
+![Screenshot lv](docs/lv.png)
 ###### Link : 
 ###### https://docs.google.com/presentation/d/1oT5K4ch9DpX5ZJk8b1gcoet2ImcXjlNnlQtmsWTuLCk/edit?usp=sharing
 
