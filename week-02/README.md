@@ -1,4 +1,4 @@
-# Tugas Praktikum
+# Tugas Praktikum Pertemuan 2
 
 ### Nama : Brian Mohamad Safiudin
 ### NIM : 2141720133
