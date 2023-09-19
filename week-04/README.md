@@ -183,12 +183,170 @@
 ###### Kode diatas merupakan penggunaan tuple (pasangan nilai) dengan penamaan field yang dapat diakses menggunakan sintaks $. Kode tersebut membuat sebuah tuple yang berisi nama dan NIM, kemudian mencetaknya ke konsol.
 
 # Tugas Praktikum
-#### 1. Silakan selesaikan Praktikum 1 sampai 3, lalu dokumentasikan berupa screenshot hasil pekerjaan beserta penjelasannya!
+#### 1. Silakan selesaikan Praktikum 1 sampai 5, lalu dokumentasikan berupa screenshot hasil pekerjaan Anda beserta penjelasannya!
 ###### Selesai
 
-#### 2. Buatlah sebuah program yang dapat menampilkan bilangan prima dari angka 0 sampai 201 menggunakan Dart. Ketika bilangan prima ditemukan, maka tampilkan nama lengkap dan NIM Anda.
-## Program bilangan prima 0 sampai 201
-![Screenshot P3](docs/tugaspraktikum.png)
+#### 2. Jelaskan yang dimaksud Functions dalam bahasa Dart!
+###### Fungsi dalam dart adalah objek yang memiliki tipe. fungsi dapat diteruskan sebagai argumen ke fungsi lain. Kita dapat memanggil instance kelas Dart seolah-olah itu adalah sebuah fungsi.
 
-#### 3. Kumpulkan berupa link commit repo GitHub pada tautan yang telah disediakan di grup Telegram!
+#### 3. Jelaskan jenis-jenis parameter di Functions beserta contoh sintaksnya! 
+jawab  
+- required positional parameters
+  ```dart
+  sayHappyBirthday(String name, int age) {
+    return "$name is ${age.toString()} years old";
+    }
+  ```
+  ```dart
+  //to call this function in main
+  sayHappyBirthday("Laura", 21);
+  ```
+- optional positional parameters
+  ```dart
+  sayHappyBirthday(String name, [int? age]) {
+    return "$name is $age years old";}
+  ```
+  or
+  ```dart
+  sayHappyBirthday(String name, [int age = 21]) {
+    return "Happy birthday $name! You are $age years old.";}
+  ```
+  ```dart
+  //to call
+  void main() {
+    var hello = sayHappyBirthday('Robert');
+    print(hello);}// Prints Happy birthday Robert! You are 21 years old
+  ```
+- named parameters
+  ```dart
+  void greet({String name, int age}) {
+  print("Hello, $name! You are $age years old.");
+  }greet(age: 25, name: "Alice");  // Output: Hello, Alice! You are 25 years old.
+  ```
+- default parameters
+  ```dart
+  void greet(String name, {String message = "Hello"}) {
+  print("$message, $name!");
+  }
+  greet("Alice");  // Output: Hello, Alice!
+  greet("Bob", message: "Hi");  // Output: Hi, Bob!
+  ```
+
+#### 4. Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
+###### Functions adalah first-class objects. Ini berarti fungsi dalam Dart dapat diperlakukan seperti objek lainnya, seperti integer, string, atau list. Kita dapat menyimpan fungsi dalam variabel, meneruskannya sebagai argumen ke fungsi lain, mengembalikannya sebagai nilai dari fungsi, atau membuatnya secara dinamis.
+
+#### 5. Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+###### Anonymous functions (fungsi anonim) adalah fungsi yang tidak memiliki nama identifikasi yang spesifik. Mereka juga dikenal sebagai lambda functions, function literals, atau arrow functions, tergantung pada bahasa pemrograman yang digunakan. Fungsi anonim biasanya digunakan ketika kita hanya perlu menggunakan fungsi tersebut dalam konteks tertentu dan tidak perlu memberinya nama.
+```dart
+void main() {
+List = [1, 2, 3, 4];
+list.forEach((number) => print('hello $number'));
+}
+```
+
+#### 6. Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
+jawab  
+- Lexical Scope
+  ```Lexical scope (lingkup leksikal) mengacu pada cara variabel diresolusi berdasarkan struktur fisik kode pada saat kompilasi. Dalam lexical scope, akses variabel ditentukan oleh lokasi di mana variabel tersebut dideklarasikan dalam kode. jadi inner function dapat mengakses variabel ke tingkat global```
+  ```dart
+  globalFunction() {
+    print("Top-level globalFunction");
+    }
+    simpleFunction() { 
+        print("SimpleFunction"); 
+        globalFunction() {
+            print("Nested globalFunction");
+    }
+        globalFunction();
+    }
+    main() {
+        simpleFunction();
+        globalFunction();
+    }
+    //output simpleFunction Nested globalFunction Top-level globalFunction
+  ```
+  ```Saat main memanggil simpleFunction maka fungsi nested globalFunction didefinisikan, memblokir akses ke top-level globalFunction. Kapan globalFunction dipanggil, itu adalah versi nested yang dipanggil.Sebaliknya, ketika fungsi main memanggil fungsi globalFunction, fungsi globalFunction top-level dipanggil karena, dalam lingkup ini, nested fungsi globalFunction dari simpleFunction tidak didefinisikan.Oleh karena itu, output dari memanggil metode utama adalah ini```
+  - simple function
+  - nested globalFunction
+  - top-level globalFunction
+- Lexical Closures
+  ```Lexical closures (penutupan leksikal) mengacu pada kemampuan fungsi untuk mengakses dan "mengingat" variabel yang ada dalam lingkup leksikal fungsi tersebut, bahkan setelah fungsi tersebut selesai dieksekusi atau dikeluarkan dari lingkup aslinya.```
+  ```dart
+  Function outerFunction() {
+  int x = 10;
+
+  Function innerFunction() {
+    return () {
+      print(x); // Mengakses variabel x dari outerFunction
+    };
+  }
+
+  return innerFunction();
+  }
+  void main() {
+  var closure = outerFunction();
+  closure(); // Output: 10
+    }
+  ```
+  ```Dalam lexical closures, fungsi "mengunci" (mengabadikan) referensi ke variabel yang ada dalam lingkup leksikalnya, sehingga variabel tersebut tetap dapat diakses bahkan setelah fungsi tersebut selesai dieksekusi atau dikeluarkan dari lingkup aslinya.```
+
+#### 7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
+jawab  
+- Menggunakan List atau Map:  
+    Kita dapat menggunakan List atau Map untuk mengelompokkan nilai-nilai yang ingin kita kembalikan sebagai multiple values.  
+    contoh dengan List
+    ```dart
+    List<int> getNumbers() {
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    return [a, b, c];
+    }
+
+    void main() {
+    List<int> numbers = getNumbers();
+    print(numbers); // Output: [1, 2, 3]
+    }
+    ```
+    Contoh dengan Map
+    ```dart
+    Map<String, int> getNumbers() {
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    return {'a': a, 'b': b, 'c': c};
+    }
+
+    void main() {
+    Map<String, int> numbers = getNumbers();
+    print(numbers); // Output: {a: 1, b: 2, c: 3}
+    }
+    ``` 
+- Menggunakan objek khusus  
+    Kita juga dapat membuat objek khusus yang mengemas nilai-nilai yang ingin dikembalikan sebagai multiple values.
+
+    contoh
+    ```dart
+    class Result {
+  int sum;
+  int difference;
+
+  Result(this.sum, this.difference);
+    }
+
+    Result performCalculations(int a, int b) {
+    int sum = a + b;
+    int difference = a - b;
+    return Result(sum, difference);
+    }
+
+    void main() {
+  Result result = performCalculations(5, 3);
+  print(result.sum); // Output: 8
+  print(result.difference); // Output: 2
+    }
+    ```
+    Dalam contoh di atas, kita membuat kelas Result yang memiliki properti sum dan difference. Fungsi performCalculations() melakukan perhitungan dan mengembalikan objek Result yang berisi nilai-nilai yang ingin dikembalikan sebagai multiple values.
+
+#### 8. Kumpulkan berupa link commit repo GitHub pada tautan yang telah disediakan di grup Telegram!
 ###### Selesai
