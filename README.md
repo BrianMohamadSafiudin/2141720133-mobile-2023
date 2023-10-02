@@ -10,4 +10,4 @@
 |Week 02         |`'Null Safety dan Late Variable'`|https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-02                             
 |Week 03         |`'Control Flows dan Perulangan'` |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-03                               
 |Week 04         |`'Collection, Records, Fungsi'`  |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-04                          
-|Week 05         |                                 |                             
+|Week 05         |`'Flutter Fundamental'`          |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-05                             
