@@ -11,21 +11,22 @@
 ![Screenshot P1L1](docs/praktikum1langkah1.png)
 
 ## Langkah 2
-#### Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan!
+#### Kemudian buat folder sesuai style laporan praktikum yang Anda pilih. Disarankan pada folder dokumen atau desktop atau alamat folder lain yang tidak terlalu dalam atau panjang. Lalu pilih Select a folder to create the project in.
 ![Screenshot P1L2](docs/praktikum1langkah2.png)
-###### Kode diatas membuat list dengan tiga elemen (1, 2, dan 3) dan memeriksa panjang list serta nilai elemen ke-2. Kemudian, program mencetak panjang list dan nilai elemen ke-2. Setelah itu, nilai elemen ke-2 diubah menjadi 1 dan diperiksa kembali untuk memastikan perubahan. Hasil keluaran yang diharapkan adalah panjang list (3), nilai awal elemen ke-2 (2), dan nilai elemen ke-2 setelah diubah (1). Pernyataan assert digunakan untuk memastikan bahwa kondisi yang diberikan benar selama eksekusi program.
 
 ## Langkah 3
-#### Ubah kode pada langkah 1 menjadi variabel final yang mempunyai index = 5 dengan default value = null. Isilah nama dan NIM Anda pada elemen index ke-1 dan ke-2. Lalu print dan capture hasilnya. Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+#### Buat nama project flutter hello_world seperti berikut, lalu tekan Enter. Tunggu hingga proses pembuatan project baru selesai.
 ![Screenshot P1L3](docs/praktikum1langkah3.png)
-###### Kode diatas membuat variabel list yang bersifat final, memiliki panjang 5, dan elemen default adalah null, kemudian mengisi elemen index 1 dan 2 dengan nama dan NIM, dan mencetak hasilnya
+
+## Langkah 4
+#### Jika sudah selesai proses pembuatan project baru, pastikan tampilan seperti berikut. Pesan akan tampil berupa "Your Flutter Project is ready!" artinya Anda telah berhasil membuat project Flutter baru.
+![Screenshot P1L4](docs/praktikum1langkah4.png)
 
 # Praktikum 2: Eksperimen Tipe Data Set
 
-## Langkah 1
-#### Ketik atau salin kode program berikut ke dalam fungsi main().
-###### var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-###### print(halogens);
+## Langkah 1 - 10
+#### Lakukan push juga untuk semua file lainnya dengan pilih Stage All Changes. Beri pesan commit "project hello_world". Maka akan tampil di repository GitHub Anda seperti berikut.
+![Screenshot P2L1](docs/praktikum2langkah10.png)
 
 ## Langkah 2
 #### Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
