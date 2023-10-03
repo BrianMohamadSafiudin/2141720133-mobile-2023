@@ -8,15 +8,19 @@
 
 ## Langkah 1 : Buat Project Baru
 #### Buatlah sebuah project flutter baru dengan nama flutter_fundamental_3. Lalu jadikan repository di GitHub Anda dengan nama flutter-fundamental-part3.
+![Screenshot P1L1](docs/praktikum1langkah1.png)
 
-## Langkah 2
+## Langkah 2 : Menambahkan GestureDetector
 #### Buka file main.dart lalu ganti bagian body dengan kode berikut. Untuk MyImageWidget() dapat Anda ganti dengan widget milik Anda sendiri.
 ![Screenshot P1L2](docs/praktikum1langkah2.png)
 
-## Langkah 3
-#### Ubah kode pada langkah 1 menjadi variabel final yang mempunyai index = 5 dengan default value = null. Isilah nama dan NIM Anda pada elemen index ke-1 dan ke-2. Lalu print dan capture hasilnya. Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+## Langkah 3 : Buat Dokumentasi atau Laporan Praktikum
+#### Simpan lalu coba untuk Run project Anda. Untuk kode MyImageWidget() di sini menampilkan logo Polinema seperti gambar berikut. Jika Anda coba klik/tap pada gambar, maka angka di bawah akan terus bertambah. Mengapa demikian? Jelaskan dalam laporan README.md! Jangan lupa kode dan hasil tampilannya di screenshot.
 ![Screenshot P1L3](docs/praktikum1langkah3.png)
-###### Kode diatas membuat variabel list yang bersifat final, memiliki panjang 5, dan elemen default adalah null, kemudian mengisi elemen index 1 dan 2 dengan nama dan NIM, dan mencetak hasilnya
+
+## Langkah 4 : Eksperimen Jenis Gesture Lain
+#### Sekarang Anda ganti kode bagian onTap dari Langkah 2 dengan onDoubleTap dan onLongPress. Lalu screenshot masing-masing hasil tampilannya dan jelaskan fungsinya!
+![Screenshot P1L4](docs/praktikum1langkah4.png)
 
 # Praktikum 2: Eksperimen Tipe Data Set
 
