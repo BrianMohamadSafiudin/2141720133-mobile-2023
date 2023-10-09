@@ -93,6 +93,9 @@
 ![Screenshot YFF5](docs/yourfirstflutter5.png)
 ![Screenshot YFF6](docs/yourfirstflutter6.png)
 
+#### Device Yang Saya Gunakan (Oppo F7 - CPH1821)
+![Screenshot HPS](docs/hpsaya.png)
+
 #### Hasil Run / Debug
 ![Screenshot YFF](docs/yourfirstflutter.gif)
 
