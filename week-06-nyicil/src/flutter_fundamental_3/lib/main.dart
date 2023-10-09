@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fundamental_3/basic_widgets/image_widget.dart';
+import 'package:flutter_fundamental_3/forms.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,6 +57,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final TextEditingController _controller = TextEditingController.fromValue(const TextEditingValue(text: "isi angka saja"));
+  
   int _counter = 0;
 
   void _incrementCounter() {
@@ -89,22 +92,25 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: GestureDetector(
-            onTap: _incrementCounter,
+            onDoubleTap: _incrementCounter,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const MyImageWidget(),
-                Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
+            children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            const FormContoh(),
               ],
             )),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+child: const Icon(Icons.favorite_rounded),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
