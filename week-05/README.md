@@ -78,17 +78,26 @@
 ![Screenshot P4L6](docs/praktikum4langkah6.png)
 
 # Tugas Praktikum
-#### 1. Selesaikan Praktikum 1 sampai 4, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file README.md!
-###### Selesai
+### 1. Selesaikan Praktikum 1 sampai 4, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file README.md!
+###### Selesai, dokumentasi ada di atas
 
-#### 2. Pada praktikum 4 mulai dari Langkah 3 sampai 6, buatlah file widget tersendiri di folder basic_widgets, kemudian pada file main.dart cukup melakukan import widget sesuai masing-masing langkah tersebut!
-###### Selesai
+### 2. Pada praktikum 4 mulai dari Langkah 3 sampai 6, buatlah file widget tersendiri di folder basic_widgets, kemudian pada file main.dart cukup melakukan import widget sesuai masing-masing langkah tersebut!
+###### Selesai, dokumentasi ada di atas
 
-#### 3. Selesaikan Codelabs: Your first Flutter app, lalu buatlah laporan praktikumnya dan push ke repository GitHub Anda!
-###### Selesai
+### 3. Selesaikan Codelabs: Your first Flutter app, lalu buatlah laporan praktikumnya dan push ke repository GitHub Anda!
+#### Flutter-Codelab-First Code
+![Screenshot YFF1](docs/yourfirstflutter1.png)
+![Screenshot YFF2](docs/yourfirstflutter2.png)
+![Screenshot YFF3](docs/yourfirstflutter3.png)
+![Screenshot YFF4](docs/yourfirstflutter4.png)
+![Screenshot YFF5](docs/yourfirstflutter5.png)
+![Screenshot YFF6](docs/yourfirstflutter6.png)
 
-#### 4. README.md berisi: capture hasil akhir tiap praktikum (side-by-side, bisa juga berupa file GIF agar terlihat proses perubahan ketika ada aksi dari pengguna) di browser dan perangkat fisik (device) dengan menampilkan NIM dan Nama Anda sebagai ciri pekerjaan Anda. Jika mode developer di perangkat HP Anda belum aktif, silakan cari di internet cara mengaktifkannya!
-###### Selesai
+#### Hasil Run / Debug
+![Screenshot YFF](docs/yourfirstflutter.gif)
 
-#### 5. Kumpulkan berupa link repository/commit GitHub Anda ke tautan spreadsheet yang telah disepakati oleh dosen!
+### 4. README.md berisi: capture hasil akhir tiap praktikum (side-by-side, bisa juga berupa file GIF agar terlihat proses perubahan ketika ada aksi dari pengguna) di browser dan perangkat fisik (device) dengan menampilkan NIM dan Nama Anda sebagai ciri pekerjaan Anda. Jika mode developer di perangkat HP Anda belum aktif, silakan cari di internet cara mengaktifkannya!
+###### Selesai, dokumentasi ada di atas
+
+### 5. Kumpulkan berupa link repository/commit GitHub Anda ke tautan spreadsheet yang telah disepakati oleh dosen!
 ###### Selesai
