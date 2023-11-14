@@ -9,7 +9,7 @@
 ## 1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md!
 
 ### Hasil Eksekusi Program
-![ss](docs/Praktikum1.gif)
+<img src="docs/Praktikum1.gif" width = 30%></img>
 
 ### 2. Jelaskan maksud dari langkah 4 pada praktikum tersebut! Mengapa dilakukan demikian?
 
@@ -41,7 +41,7 @@
 ### 1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md!
 
 ### Hasil Eksekusi Program
-![ss](docs/Praktikum2.gif)
+<img src="docs/Praktikum2.gif" width = 30%></img>
 
 ### 2. Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier?
 
@@ -74,7 +74,7 @@
 ### 1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md!
 
 ### Hasil Eksekusi Program
-![ss](docs/Praktikum3.gif)
+<img src="docs/Praktikum3.gif" width = 30%></img>
 
 ### 2. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini!
 
