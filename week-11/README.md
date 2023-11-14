@@ -8,61 +8,84 @@
 
 ## 1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md!
 
-# Tugas Praktikum
+### Hasil Eksekusi Program
+![ss](docs/Praktikum1.gif)
 
-## 1. Selesaikan Praktikum tersebut, lalu dokumentasikan dan push ke repository Anda berupa screenshot hasil pekerjaan beserta penjelasannya di file README.md!
+### 2. Jelaskan maksud dari langkah 4 pada praktikum tersebut! Mengapa dilakukan demikian?
 
-### Langkah 1: Buat Project Baru
-- Buatlah sebuah project flutter baru dengan nama flutter_plugin_pubdev. Lalu jadikan repository di GitHub Anda dengan nama flutter_plugin_pubdev.
+- Pada langkah 4, data_layer digunakan untuk menyimpan  file plan.dart dan task.dart yang di import ke plan_screen jadi hanya  data_layer yang di import.
 
-### Langkah 2: Menambahkan Plugin
-- Tambahkan plugin auto_size_text menggunakan perintah berikut di terminal. Jika berhasil, maka akan tampil nama plugin beserta versinya di file pubspec.yaml pada bagian dependencies.
+### 3. Mengapa perlu variabel plan di langkah 6 pada praktikum tersebut? Mengapa dibuat konstanta ?
 
-### Langkah 3: Buat file red_text_widget.dart
-- Buat file baru bernama red_text_widget.dart di dalam folder lib lalu isi kode.
+- Karena variabel plan dibuat untuk menyimpan objek Plan yang digunakan di kelas PlanScreen. Pada langkah ini, variabel plan diberikan nilai default sebagai objek Plan kosong menggunakan konstruktor konstan. Dengan memberikan nilai awal dan konstanta pada objek Plan, kita menjadikan objek Plan hanya dapat dibaca dan mempertahankan nilainya setelah inisialisasi. Dalam kursus ini, akan berguna untuk memulai dengan rencana kosong dan membuat fungsi untuk menambah dan mengubah rencana dan tugasnya.
 
-### Langkah 4: Tambah Widget AutoSizeText
-- Masih di file red_text_widget.dart, untuk menggunakan plugin auto_size_text, ubahlah kode return Container() menjadi seperti berikut. Setelah Anda menambahkan kode di atas, Anda akan mendapatkan info error. Mengapa demikian? Jelaskan dalam laporan praktikum Anda!
 
-##### terjadi eror karena package AutoSizeText belum di import ke main, dan text belum dimasukkan ke container
+### 4. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
 
-### Langkah 5: Buat Variabel text dan parameter di constructor
-- Tambahkan variabel text dan parameter di constructor.
+- Langkah 9 membuat metode _buildTaskTile, yang digunakan untuk membuat item tampilan untuk setiap tugas yang tercantum dalam rencana. Ini adalah tampilan yang memungkinkan pengguna untuk melihat apakah suatu tugas telah diselesaikan dengan melihat apakah sebuah kotak dicentang.
 
-### Langkah 6: Tambahkan widget di main.dart
-- Buka file main.dart lalu tambahkan di dalam children: pada class _MyHomePageState
+
+### 5. Apa kegunaan method pada Langkah 11 dan 13 dalam lifecyle state ?
+
+- Langkah 11 (initState()): Method initState() digunakan untuk melakukan inisialisasi state pada widget.
+
+##### Pada langkah ini, sebuah ScrollController dideklarasikan dan dimulai dengan menambahkan listener. Fungsinya adalah untuk mengatur perilaku ketika terjadi event scroll pada ListView, khususnya untuk menghapus fokus dari semua TextField ketika terjadi scrolling. Ini membantu untuk menghindari masalah interaksi pengguna saat keyboard muncul dan sekaligus memastikan pengalaman pengguna yang lebih baik.
+
+- Langkah 13 (dispose()): Method dispose() merupakan bagian dari siklus hidup widget dan digunakan untuk membersihkan dan melepaskan sumber daya sebelum widget dihancurkan.
+ 
+##### Pada langkah ini, ScrollController dihentikan dan dihapus. Tujuannya adalah untuk menghindari kebocoran memori atau masalah kinerja dengan memastikan bahwa sumber daya yang digunakan oleh widget dihentikan dengan benar ketika widget tidak lagi digunakan.
+
+
+# Praktikum 2: InheritedWidget
+
+### 1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md!
 
 ### Hasil Eksekusi Program
-![ss](docs/hasil.gif)
+![ss](docs/Praktikum2.gif)
 
-## 2. Jelaskan maksud dari langkah 2 pada praktikum tersebut!
-- Pada langkah 2, penjelasannya adalah bahwa perintah flutter pub add auto_size_text akan menambahkan plugin bernama auto_size_text ke proyek Flutter. Plugin ini akan ditambahkan ke berkas pubspec.yaml dalam bagian dependencies dan dapat diakses sebagai widget.
+### 2. Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier?
 
-## 3. Jelaskan maksud dari langkah 5 pada praktikum tersebut!
-- Langkah 5 menjelaskan bahwa variabel text ditambahkan ke constructor RedTextWidget dengan tipe data String dan diberi atribut required (wajib diisi dan tidak boleh null). Ini dilakukan agar variabel text bisa digunakan di berkas lain dan nilainya bisa diubah sesuai kebutuhan.
+- InheritedWidget pada langkah 1 adalah return context.
 
-## 4. Pada langkah 6 terdapat dua widget yang ditambahkan, jelaskan fungsi dan perbedaannya!
-- Pada langkah 6, terdapat dua widget yang ditambahkan. Keduanya berfungsi untuk menampilkan teks yang dibungkus dengan sebuah Container. Perbedaannya terletak pada warna, lebar (width), dan isi (child) dari Container. Widget Container pertama berwarna kuning, memiliki lebar 50, dan memiliki child yang menggunakan widget RedTextWidget dengan AutoSizeText, yang mengakibatkan hanya 2 baris teks ditampilkan dan sisa teks terpotong dengan elipsis. Sementara itu, Container kedua menggunakan widget Text, sehingga semua teks ditampilkan tanpa pemotongan.
+##### dependOnInheritedWidgetOfExactType<PlanProvider>()!.notifier!;
 
-## 5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text berdasarkan tautan pada dokumentasi ini !
+- InheritedNotifier digunakan karena memberikan kemampuan untuk mempublikasikan notifikasi ketika ada perubahan pada data yang dipantau.Dalam konteks ini, PlanProvider menggunakan ValueNotifier untuk mengelola perubahan pada data rencana. Dengan cara ini, ketika terjadi perubahan pada data paket, PlanProvider  memberi tahu utilitas yang mendasarinya agar menggunakan data tersebut untuk membangun kembali.
 
-| Parameter         | Description                                          |
-| ----------------- | ---------------------------------------------------- |
-| Key               | Digunakan untuk mengidentifikasi widget dalam widget tree Flutter. |
-| textKey           | Key yang dapat digunakan untuk mengidentifikasi teks. |
-| style             | Menentukan gaya teks, termasuk properti seperti ukuran font, warna, dan lainnya. |
-| minFontSize       | Menentukan ukuran font minimum yang akan digunakan saat melakukan penyesuaian otomatis ukuran teks. |
-| maxFontSize       | Menentukan ukuran font maksimum yang akan digunakan saat melakukan penyesuaian otomatis ukuran teks. |
-| stepGranularity   | Digunakan saat menyesuaikan ukuran teks. |
-| presetFontSizes   | Digunakan dalam penyesuaian ukuran teks. |
-| group             | Digunakan untuk mengelompokkan beberapa widget AutoSizeText bersama untuk menyesuaikan ukuran teks mereka bersamaan. |
-| textAlign         | Menentukan perataan teks, seperti 'kiri', 'tengah', 'kanan', dan sebagainya. |
-| textDirection     | Menentukan arah teks, seperti 'kiri ke kanan' atau 'kanan ke kiri'. |
-| locale            | Menentukan bahasa atau lokasi untuk penulisan teks. |
-| softWrap          | Menentukan apakah teks akan dilipat secara otomatis ke baris berikutnya jika tidak cukup ruang. |
-| wrapWords         | Menentukan perilaku teks saat tidak cukup ruang, misalnya 'ellipsis' akan menampilkan titik-titik jika teks terpotong. |
-| overflow           | Menentukan perilaku teks saat tidak cukup ruang, misalnya 'ellipsis' akan menampilkan titik-titik jika teks terpotong |
-| overflowReplacement | Widget alternatif yang akan ditampilkan sebagai pengganti teks yang terpotong. |
-| textScaleFactor   | Faktor skala yang digunakan untuk memperbesar atau mengecilkan teks. |
-| maxLines          | Jumlah maksimum baris teks yang akan ditampilkan. |
-| semanticLabel     | Digunakan untuk aksesibilitas atau pembaca layar. |
+
+### 3. Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian?
+
+- int getcompleteCount: Metode ini menghitung jumlah tugas yang telah diselesaikan dalam rencana  menggunakan metode Where dalam daftar tugas dan menghitung  jumlah tugas dengan nilai atribut lengkap yang sebenarnya.
+
+- Kelengkapan StringMessage: Metode ini menghasilkan pesan yang menunjukkan jumlah tugas yang  diselesaikan dari jumlah total tugas dalam rencana.
+
+- Pesan ini mengambil informasi dari metode sebelumnya (completedCount) dan menampilkan pesan berformat yang menunjukkan jumlah tugas yang diselesaikan dari jumlah total tugas.
+
+- Penambahan kedua metode ini berguna untuk memberikan informasi tambahan terkait  rencana yang  ditampilkan, seperti memberikan informasi jumlah tugas yang diselesaikan.
+
+
+### 4. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+
+- SafeArea Tempatkan teks plan.completenessMessage di bagian bawah layar, di luar daftar tugas. Hal ini memastikan bahwa teks  tidak tertutup oleh elemen UI lainnya, seperti tombol navigasi sistem atau area status  perangkat.
+
+
+
+# Praktikum 3: State di Multiple Screens
+
+### 1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md!
+
+### Hasil Eksekusi Program
+![ss](docs/Praktikum3.gif)
+
+### 2. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini!
+
+- Pengguna memasukkan nama rencana  baru ke dalam widget PlanCreatorScreen.
+
+- PlanCreatorScreen Widget  menambahkan rencana  baru ke daftar rencana  melalui PlanProvider.
+
+- PlanProvider memberi tahu semua widgetnya bahwa daftar paket telah berubah.
+
+- Utilitas PlanScreen mendengarkan perubahan dalam daftar rencana  dan memperbarui layarnya.
+ 
+
+### 3. Lakukan capture hasil dari Langkah 14 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+- Pada langkah 14,  PlanCreatorScreen menyediakan fungsionalitas tambahan yang memungkinkan pengguna  membuat dan melihat daftar rencana  baru. Langkah 14 juga membantu membuat dua tampilan yang  terhubung. Layar pertama, PlanCreatorScreen, memungkinkan pengguna  membuat rencana baru, sedangkan layar kedua, PlanScreen, memungkinkan pengguna  melihat detail  rencana yang telah dibuat dan melakukan penambahan, penghapusan, atau perubahan tugas  dalam rencana tersebut. Semua ini terintegrasi menggunakan PlanProvider untuk pengelolaan data yang efisien dan terstruktur.
