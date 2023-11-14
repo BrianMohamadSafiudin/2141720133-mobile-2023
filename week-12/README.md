@@ -80,6 +80,8 @@ class _FuturePageState extends State<FuturePage> {
 
 ```
 
+---
+
 ## **Soal 2**
 
 -  **Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. Caranya ambil di URL browser Anda seperti gambar berikut ini.**
@@ -90,3 +92,12 @@ class _FuturePageState extends State<FuturePage> {
 
 <img src="docs/Praktikum1Soal2b.jpg" width = 50%></img>
 
+---
+
+## **Soal 3**
+
+-  **Jelaskan maksud kode langkah 5 tersebut terkait substring dan catchError!**
+
+Pada langkah 5,  metode `substring(0, 450)` digunakan untuk mengambil beberapa teks dari hasil query data. Fungsi `substring` digunakan untuk memotong teks, dalam hal ini dari indeks 0 hingga indeks 449, sehingga hanya sebagian tertentu dari hasil query yang ditampilkan. Selain itu,  metode `catchError` digunakan setelah blok `then`, yang  menangani kesalahan yang mungkin terjadi selama proses pengambilan data. Jika terjadi kesalahan, blok kode di dalam `catchError` akan dieksekusi dan variabel `hasil` akan ditetapkan sebagai `Terjadi kesalahan`. `setState` kemudian dipanggil untuk memperbarui antarmuka pengguna dengan menampilkan hasil atau pesan kesalahan yang sesuai.
+
+<img src="docs/Praktikum1Soal3.gif" width = 30%></img>
