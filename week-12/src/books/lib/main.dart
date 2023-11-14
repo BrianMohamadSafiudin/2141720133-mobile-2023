@@ -38,14 +38,31 @@ class _FuturePageState extends State<FuturePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back from the Future Brian'),
+title: const Text('Back from the Future Brian'),
       ),
       body: Center(
         child: Column(children: [
           const Spacer(),
           ElevatedButton(
             child: Text('GO!'),
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                isLoading = true;
+              });
+              Future.delayed(Duration(seconds: 1)).then(((value) {
+                getData().then((value) {
+                  result = value.body.toString().substring(0, 450);
+                  setState(() {
+                    isLoading = false;
+                  });
+                }).catchError((e) {
+                  result = "An error occured $e";
+                  setState(() {
+                    isLoading = false;
+                  });
+                });
+              }));
+            },
           ),
           const Spacer(),
           isLoading ? CircularProgressIndicator() : Text(result),
@@ -57,9 +74,8 @@ class _FuturePageState extends State<FuturePage> {
 
   Future<Response> getData() async {
     const authority = 'www.googleapis.com';
-    const path = '/books/v1/volumes/THliCwAAQBAJ';
+    const path = '/books/v1/volumes/tZldEAAAQBAJ';
     Uri url = Uri.https(authority, path);
     return await http.get(url);
   }
 }
-
