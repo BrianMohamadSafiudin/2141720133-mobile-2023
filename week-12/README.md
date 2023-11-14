@@ -223,3 +223,144 @@ Pada langkah 2, dilakukan penambahan method `count`. Method ini memiliki tiga pe
 
 
 <img src="docs/Praktikum1Soal4.gif" width = 30%></img>
+
+---
+
+# **Praktikum 3: Menggunakan Completer di Future**
+
+```Dart
+import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'package:async/async.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo Brian',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const FuturePage(),
+    );
+  }
+}
+
+class FuturePage extends StatefulWidget {
+  const FuturePage({super.key});
+
+  @override
+  State<FuturePage> createState() => _FuturePageState();
+}
+
+class _FuturePageState extends State<FuturePage> {
+  String result = '';
+  late Completer completer;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Back from the Future Brian'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {
+                getNumber().then((value) {
+                  setState(() {
+                    result = value.toString();
+                  });
+                }).catchError((e) {
+                  result = 'An error Occured';
+                });
+              },
+              child: const Text("GO!"),
+            ),
+            const Spacer(),
+            Text(result),
+            const Spacer(),
+            const CircularProgressIndicator(),
+            const Spacer()
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future getNumber() {
+    completer = Completer<int>();
+    calculate();
+    return completer.future;
+  }
+
+  calculate() async {
+    try {
+      await Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+    } catch (e) {
+      completer.completeError({});
+    }
+  }
+
+  Future<Response> getData() async {
+    const authority = 'www.googleapis.com';
+    const path = '/books/v1/volumes/THliCwAAQBAJ';
+    Uri url = Uri.https(authority, path);
+    return await http.get(url);
+  }
+
+  Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
+  }
+
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  Future count() async {
+    int total = 0;
+    total = await returnOneAsync();
+    total += await returnTwoAsync();
+    total += await returnThreeAsync();
+    setState(() {
+      result = total.toString();
+    });
+  }
+}
+```
+
+---
+
+## **Soal 5**
+
+-  **Jelaskan maksud kode langkah 2 tersebut!**
+
+Langkah 2 dalam kode tersebut memberikan pengenalan konsep `Completer` dalam Flutter. Pertama mendeklarasikan variabel `completer` sebagai `late Completer`, yang artinya nilai variabel ini akan diinisialisasi sebelum digunakan. Selanjutnya ada dua metode yang ditambahkan.
+
+Method pertama, `getNumber` yang bertugas membuat sebuah `Completer`, lalu memanggil method lain yaitu `calculate`. Kemudian methodeini mengembalikan `future` dari `completer`. `Future` ini yang nantinya menjadi janji bahwa suatu nilai akan tersedia di masa depan.
+
+Method kedua, `calculate` yang mensimulasikan operasi yang membutuhkan waktu dengan cara menunda selama 5 detik menggunakan `await Future.delayed(...)`. Setelah itu, nilai `completer` diisi dengan angka 42, yang artinya operasi ini telah selesai.
+
+<img src="docs/Praktikum1Soal5.gif" width = 30%></img>
+
