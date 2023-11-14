@@ -72,10 +72,21 @@ class _FuturePageState extends State<FuturePage> {
 
   Future<Response> getData() async {
     const authority = 'www.googleapis.com';
-    const path = '/books/v1/volumes/junbDwAAQBAJ';
+    const path = '/books/v1/volumes/THliCwAAQBAJ';
     Uri url = Uri.https(authority, path);
     return await http.get(url);
   }
 }
 
 ```
+
+## **Soal 2**
+
+-  **Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. Caranya ambil di URL browser Anda seperti gambar berikut ini.**
+
+<img src="docs/Praktikum1Soal2a.jpg" width = 50%></img>
+
+-  **Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. Caranya ambil di URL browser Anda seperti gambar berikut ini.**
+
+<img src="docs/Praktikum1Soal2b.jpg" width = 50%></img>
+
