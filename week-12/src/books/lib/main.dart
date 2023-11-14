@@ -54,7 +54,7 @@ class _FuturePageState extends State<FuturePage> {
                     result = value.toString();
                   });
                 }).catchError((e) {
-                  result = 'An error Occured';
+                  result = 'An error occurred';
                 });
               },
               child: const Text("GO!"),
@@ -80,7 +80,7 @@ class _FuturePageState extends State<FuturePage> {
     try {
       await Future.delayed(const Duration(seconds: 5));
       completer.complete(42);
-    } catch (e) {
+    } catch (_) {
       completer.completeError({});
     }
   }
