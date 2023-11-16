@@ -690,3 +690,21 @@ class _NavigationFirstState extends State<NavigationFirst> {
 Apabila button diklik, warnanya akan mengalami perubahan sesuai dengan konfigurasi yang telah ditentukan pada `ElevatedButton()` dalam class `navigation_second.dart`. Hal ini disebabkan oleh adanya fungsi `Navigation.pop()` pada setiap button dengan parameter berupa `context` dan `color` yang telah ditetapkan. Sehingga, setiap kali button diklik, warna yang ditampilkan akan bervariasi sesuai dengan nilai variabel `color` yang telah diatur.
 
 <img src="docs/Praktikum8Soal16.gif" width = 30%></img>
+
+---
+
+# **Praktikum 9: Memanfaatkan async/await dengan Widget Dialog**
+
+- Pada praktikum ini, Anda akan memanfaatkan widget AlertDialog. Anda bisa manfaatkan widget ini misal untuk memilih operasi Save, Delete, Accept, dan sebagainya.
+
+---
+
+## **Soal 17**
+
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+- Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+
+Apabila button **Change Color** diklik dan memilih warna di kotak dialog,  warna latar belakang layar akan berubah bergantung pada warna yang dipilih. Proses ini terjadi karena nilai `color` diperbarui dengan nilai yang dipilih dalam fungsi `_showColorDialog`, dan setelah itu widget diperbarui menggunakan `setState`. Hal ini menyebabkan widget dibangun kembali dan menunjukkan perubahan warna di layar.
+
+<img src="docs/Praktikum9Soal17.gif" width = 30%></img>
