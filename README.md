@@ -16,3 +16,4 @@
 |Week 08         |`'Figma'`                        |https://www.figma.com/file/blbgqQgC926tgbXdsh6hYr/Flutter-Kelompok-6?type=design&node-id=0%3A1&mode=design&t=1xgsN1LuyXtmcbYU-1
 |Week 10         |`'Manajemen Plugin'`             |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-10
 |Week 11         |`'Dasar State Management'`       |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-11
+|Week 12         |`'Pemrograman Asynchronous'`     |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-12
