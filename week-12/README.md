@@ -678,3 +678,15 @@ class _NavigationFirstState extends State<NavigationFirst> {
   }
 }
 ```
+
+---
+
+## **Soal 16**
+
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+- Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+
+Apabila button diklik, warnanya akan mengalami perubahan sesuai dengan konfigurasi yang telah ditentukan pada `ElevatedButton()` dalam class `navigation_second.dart`. Hal ini disebabkan oleh adanya fungsi `Navigation.pop()` pada setiap button dengan parameter berupa `context` dan `color` yang telah ditetapkan. Sehingga, setiap kali button diklik, warna yang ditampilkan akan bervariasi sesuai dengan nilai variabel `color` yang telah diatur.
+
+<img src="docs/Praktikum8Soal16.gif" width = 30%></img>
