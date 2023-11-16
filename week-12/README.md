@@ -622,3 +622,13 @@ Hasil Run Android:
 Dari kedua praktikum tersebut tidak memiliki perbedaan UI. Keduanya tetap menampilkan koordinat Geolokasi dengan layout yang sama. Hal ini terjadi karena keduanya masih mengambil lokasi secara sinkron dalam blok `initState`. Pada tampilan UI keduanya memiliki delay yang sama, yaitu 3 detik. Selain itu, UI dapat terlihat sama karena `FutureBuilder` secara otomatis mengelola pembaruan UI, bahkan tanpa pemanggilan `setState` langsung.
 
 <img src="docs/Praktikum7Soal13.gif" width = 30%></img>
+
+---
+
+## **Soal 14**
+
+- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+Tidak ada perbedaan UI dengan langkah sebelumnya. Hal ini dikarenakan pada langkah ini hanya menambahkan `handleError()` yang akan dijalankan ketika terdapat kesalahan. Namun karena pada langkah ini tidak ada kesalahan yang terjadi selama pemrosesan data lokasi. Oleh karena itu, pesan **Something terrible happened!** dari blok penanganan kesalahan tidak ditampilkan.
+
+<img src="docs/Praktikum7Soal14.gif" width = 30%></img>
