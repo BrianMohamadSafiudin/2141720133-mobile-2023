@@ -70,3 +70,36 @@ class ColorSrean {
   ];
 }
 ```
+
+---
+
+## **Soal 3**
+
+- **Jelaskan fungsi keyword yield pada kode tersebut!**
+
+- **Apa maksud isi perintah kode tersebut?**
+
+```Dart
+import 'package:flutter/material.dart';
+
+class ColorSrean {
+  final List<Color> colors = [
+    Colors.amber,
+    Colors.grey,
+    Colors.green,
+    Colors.cyan,
+    Colors.indigo,
+  ];
+
+  Stream<Color> getColors() async* {
+    yield* Stream.periodic(const Duration(seconds: 1), (int t) {
+      int index = t % colors.length;
+      return colors[index];
+    });
+  }
+}
+```
+
+Keyword `yield*` dalam kode tersebut digunakan untuk menggabungkan nilai dari objek iterable ke dalam stream yang dihasilkan oleh fungsi `getColors`. Pada baris `yield* Stream.periodic(...)`, `yield*` memungkinka nilai-nilai yang dihasilkan oleh objek iterable dari `Stream.periodic` yang berisi daftar warna untuk disertakan secara berurutan ke dalam `stream` utama. Dengan kata lain, setiap detik, `stream` akan menghasilkan warna baru dari daftar warna yang telah ditentukan. 
+
+Pada kode tersebut mendefinisikan class `ColorStream` yang memiliki daftar warna dan sebuah metode `getColors` yang mengembalikan `stream` warna. Class ini menggunakan `Stream.periodic` untuk menghasilkan nilai dengan selang waktu tertentu yaitu setiap detik. Melalui penggunaan `yield`, setiap nilai yang dihasilkan oleh `stream` adalah warna dari daftar warna yang telah ditentukan.
