@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorSrean {
+class ColorStream {
   final List<Color> colors = [
     Colors.amber,
     Colors.grey,
