@@ -111,3 +111,33 @@ Pada kode tersebut mendefinisikan class `ColorStream` yang memiliki daftar warna
 - **Capture hasil praktikum Anda berupa GIF dan lampirkan di README.**
 
 <img src="docs/Praktikum1Soal4.gif" width = 30%></img>
+
+---
+
+## **Soal 5**
+
+- **Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !**
+
+```Dart
+void changeColor() async {
+  await for (var eventColor in colorStream.getColors()) {
+    setState(() {
+      bgColor = eventColor;
+    });
+  }
+}
+```
+
+`await for` digunakan untuk mengambil nilai dari suatu `Stream` secara sinkron. Ini berarti bahwa blok `setState` tidak akan dieksekusi hingga ada nilai baru yang diterima dari `colorStream.getColors()`. Pemakaian `await for` ini membuat fungsi changeColor bersifat asinkron.
+
+```Dart
+  void changeColor() async {
+    colorStream.getColors().listen((eventColor) {
+      setState(() {
+        bgColor = eventColor;
+      });
+    });
+  }
+```
+
+Fungsi `listen` akan dipanggil setiap kali ada data baru yang tersedia di `colorStream.getColors()`. Oleh karena itu, blok `setState` akan dieksekusi setiap kali ada perubahan pada `Stream`.

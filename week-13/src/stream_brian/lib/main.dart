@@ -4,6 +4,7 @@ import 'stream.dart';
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   // This widget is the root of your application.
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         home: const StreamHomePage());
   }
 }
+
 class StreamHomePage extends StatefulWidget {
   const StreamHomePage({super.key});
   @override
@@ -28,11 +30,11 @@ class _StreamHomePageState extends State<StreamHomePage> {
   late ColorStream colorStream;
 
   void changeColor() async {
-    await for (var eventColor in colorStream.getColors()) {
+    colorStream.getColors().listen((eventColor) {
       setState(() {
         bgColor = eventColor;
       });
-    }
+    });
   }
 
   @override
@@ -46,7 +48,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-    title: const Text('Stream Brian'),
+        title: const Text('Stream Brian'),
       ),
       body: Container(
         decoration: BoxDecoration(color: bgColor),
