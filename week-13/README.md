@@ -12,7 +12,7 @@
 
 - **Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.**
 
-- **Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.**
+- **Gantilah warna tema aplikasi sesuai kesukaan Anda.**
 
 ```Dart
 import 'package:flutter/material.dart';
@@ -48,5 +48,25 @@ class _StreamHomePageState extends State<StreamHomePage> {
   Widget build(BuildContext context) {
     return Container();
   }
+}
+```
+
+---
+
+## **Soal 2**
+
+- **Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.**
+
+```Dart
+import 'package:flutter/material.dart';
+
+class ColorSrean {
+  final List<Color> colors = [
+    Colors.amber,
+    Colors.grey,
+    Colors.green,
+    Colors.cyan,
+    Colors.indigo,
+  ];
 }
 ```
