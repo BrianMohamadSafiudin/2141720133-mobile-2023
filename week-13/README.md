@@ -216,3 +216,19 @@ Pada **langkah 1** dilakukan deklarasi variabel `transformer` dengan kata kunci 
 Pada **langkah 2** maksudnya adalah untuk melakukan langganan (subscribe) pada `stream`, sehingga dapat memperoleh informasi atau output yang dihasilkan oleh `stream` tersebut. Kemudian pada **langkah 6** terdapat pemanggilan method `cancel` pada objek `subscription` terhadap `stream`, sehingga `listener` tidak akan menerima pembaruan lebih lanjut dari `stream` tersebut setelah pemanggilan ini. Hal ini dapat berguna saat `widget` dihapus atau tidak lagi memerlukan pembaruan dari `stream` tertentu. Terakhir, pada **langkah 8**, function `addRandomNumber()` akan menghasilkan angka acak antara 0-9 dan kemudian menambahkannya ke `sink` di objek `numberStream`. Namun, sebelum melakukan itu, fungsi memeriksa apakah `sink` telah ditutup. Jika `sink` masih terbuka, random number akan ditambahkan ke dalam stream, jika tidak, nilai `lastNumber` diatur menjadi -1 melalui `setState`. Hal ini untuk mengantisipasi situasi di mana `stream` telah ditutup dan tidak bisa menerima data lebih lanjut.
 
 <img src="docs/Praktikum4Soal9.gif" width = 30%></img>
+
+---
+
+# **Praktikum 5: Multiple stream subscriptions**
+
+- Secara default, stream hanya bisa digunakan untuk satu subscription. Jika Anda mencoba untuk melakukan subscription yang sama lebih dari satu, maka akan terjadi error. Untuk menangani hal itu, tersedia broadcast stream yang dapat digunakan untuk multiple subscriptions. Pada praktikum ini, Anda akan mencoba untuk melakukan multiple stream subscriptions.
+
+---
+
+## **Soal 10**
+
+- Jelaskan mengapa error itu bisa terjadi ?
+
+Error tersebut terjadi saat mencoba menambahkan atau membuat dua `subscription` pada `stream` yang sama tanpa membatalkan `subscription` sebelumnya. Situasi ini terjadi ketika `subscription2` diinisialisasi dalam metode `initState()`, padahal `subscription` pertama sudah ada untuk menangani `stream` yang sama pada saat yang bersamaan.
+
+<img src="docs/Praktikum5Soal10.png" width = 30%></img>
