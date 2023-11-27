@@ -232,3 +232,13 @@ Pada **langkah 2** maksudnya adalah untuk melakukan langganan (subscribe) pada `
 Error tersebut terjadi saat mencoba menambahkan atau membuat dua `subscription` pada `stream` yang sama tanpa membatalkan `subscription` sebelumnya. Situasi ini terjadi ketika `subscription2` diinisialisasi dalam metode `initState()`, padahal `subscription` pertama sudah ada untuk menangani `stream` yang sama pada saat yang bersamaan.
 
 <img src="docs/Praktikum5Soal10.png" width = 30%></img>
+
+---
+
+## **Soal 11**
+
+- Jelaskan mengapa hal itu bisa terjadi ?
+
+Pada saat tombol `New Random Number` ditekan, dua angka yang identik akan dihasilkan. Hal ini merupakan keluaran dari `stream` yang dipanggil oleh objek `subscription` dan `subscription2`, yang menghasilkan nilai berupa `event` (angka acak) yang dipisahkan oleh tanda '-'. Pada saat tombol `'Stop Stream'` ditekan, langganan terhadap `stream` akan dihentikan, dan meskipun tombol `New Random Number` tetap ditekan, output tidak akan dihasilkan lagi.
+
+<img src="docs/Praktikum5Soal11.gif" width = 30%></img>
