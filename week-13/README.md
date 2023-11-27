@@ -242,3 +242,19 @@ Error tersebut terjadi saat mencoba menambahkan atau membuat dua `subscription` 
 Pada saat tombol `New Random Number` ditekan, dua angka yang identik akan dihasilkan. Hal ini merupakan keluaran dari `stream` yang dipanggil oleh objek `subscription` dan `subscription2`, yang menghasilkan nilai berupa `event` (angka acak) yang dipisahkan oleh tanda '-'. Pada saat tombol `'Stop Stream'` ditekan, langganan terhadap `stream` akan dihentikan, dan meskipun tombol `New Random Number` tetap ditekan, output tidak akan dihasilkan lagi.
 
 <img src="docs/Praktikum5Soal11.gif" width = 30%></img>
+
+---
+
+# **Praktikum 6: StreamBuilder**
+
+- StreamBuilder adalah sebuah widget untuk melakukan listen terhadap event dari stream. Ketika sebuah event terkirim, maka akan dibangun ulang semua turunannya. Seperti halnya widget FutureBuilder pada pertemuan pekan lalu, StreamBuilder berguna untuk membangun UI secara reaktif yang diperbarui setiap data baru tersedia.
+
+---
+
+## **Soal 12**
+
+- Jelaskan maksud kode pada langkah 3 dan 7 !
+
+Pada **langkah 3**, terdapat method `getNumbers` pada kelas `NumberStream`. Method ini menghasilkan sebuah `Stream<int>` yang bertindak sebagai aliran data periodik. Dengan menggunakan `Stream.periodic`, tiap 1 detik, fungsi yang menghasilkan angka acak antara 0 dan 9 akan dijalankan. Sedangkan pada **langkah 7**, digunakan `StreamBuilder` untuk membangun UI yang bergantung pada `numberStream`. Pada bagian`builder` terdapat penanganan kondisi, yaitu: jika `snapshot.hasError` bernilai `true`, menandakan ada kesalahan dalam `stream`, maka akan dicetak pesan 'Error!', jika `snapshot.hasData` bernilai `true`, maka akan ditampilkan teks dengan nilai terbaru dari `stream` di tengah layar, jika tidak ada data yang tersedia. `SizedBox.shrink` digunakan untuk mengembalikan widget kosong, sehingga tampilan tetap kosong.
+
+<img src="docs/Praktikum6Soal12.gif" width = 30%></img>
