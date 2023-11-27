@@ -17,3 +17,4 @@
 |Week 10         |`'Manajemen Plugin'`             |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-10
 |Week 11         |`'Dasar State Management'`       |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-11
 |Week 12         |`'Pemrograman Asynchronous'`     |https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-12
+|Week 13         |`'Lanjutan State dengan Streams'`|https://github.com/BrianMohamadSafiudin/2141720133-mobile-2023/tree/main/week-13
