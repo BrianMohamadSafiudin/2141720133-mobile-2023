@@ -258,3 +258,28 @@ Pada saat tombol `New Random Number` ditekan, dua angka yang identik akan dihasi
 Pada **langkah 3**, terdapat method `getNumbers` pada kelas `NumberStream`. Method ini menghasilkan sebuah `Stream<int>` yang bertindak sebagai aliran data periodik. Dengan menggunakan `Stream.periodic`, tiap 1 detik, fungsi yang menghasilkan angka acak antara 0 dan 9 akan dijalankan. Sedangkan pada **langkah 7**, digunakan `StreamBuilder` untuk membangun UI yang bergantung pada `numberStream`. Pada bagian`builder` terdapat penanganan kondisi, yaitu: jika `snapshot.hasError` bernilai `true`, menandakan ada kesalahan dalam `stream`, maka akan dicetak pesan 'Error!', jika `snapshot.hasData` bernilai `true`, maka akan ditampilkan teks dengan nilai terbaru dari `stream` di tengah layar, jika tidak ada data yang tersedia. `SizedBox.shrink` digunakan untuk mengembalikan widget kosong, sehingga tampilan tetap kosong.
 
 <img src="docs/Praktikum6Soal12.gif" width = 30%></img>
+
+---
+
+# **Praktikum 7: BLoC Pattern**
+
+- Ketika menggunakan pola BLoC, maka segalanya merupakan stream event. BLoC atau Business Logic Component adalah lapisan antara semua sumber data dan UI yang mengonsumsi data itu. Contohnya seperti sumber data dari HTTP layanan web servis atau JSON dari sebuah basis data.
+
+- Alasan utama menggunakan BLoC adalah memisahkan logika bisnis aplikasi dengan presentasi UI pada widget, terutama akan sangat berguna ketika aplikasi Anda mulai semakin kompleks dan membutuhkan akses state di berbagai tempat. Hal ini akan membuat semakin mudah dalam menggunakan kode Anda, pada beberapa bagian di aplikasi atau bahkan berbeda aplikasi. Selain itu, BLoC secara independen berdiri sendiri dengan UI, sehingga sangat mudah dilakukan isolasi dalam proses testing.
+
+---
+
+## **Soal 13**
+
+- Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ?
+
+- `RandomNumberBloc Class`
+Dalam class ini, terdapat dua `StreamController` yaitu `generateRandomController` untuk menerima peristiwa input, dan `_randomNumberController` untuk mengirimkan hasil output. Melalui penggunaan method `generateRandom`, kita dapat memberikan input dalam bentuk peristiwa, dan melalui method `randomNumber`, kita dapat menerima output berupa angka acak. Saaat sebuah peristiwa baru diterima, class ini menghasilkan angka acak menggunakan objek `Random` dan mengirimkannya ke dalam `stream _randomNumberController`.
+
+- `RandomScreen class`
+Dalam class ini, `RandomScreen` adalah widget yang menggunakan `RandomNumberBloc`untuk mengelola logika bisnis serta tampilan pengguna yang terkait angka acak. Dalam `build`, kita menggunakan `StreamBuilder` untuk membangun antarmuka pengguna yang secara otomatis terupdate setiap kali ada perubahan pada `stream _bloc.randomNumber`. Ketika button "Refresh" ditekan, hal tersebut  memicu `_bloc.generateRandom.add(null)`, memberi tahu `bloc` bahwa peristiwa baru telah terjadi, dan `bloc` kemudian menghasilkan angka acak baru.
+
+- `Main class`
+Di dalam class ini, fungsi `main` digunakan untuk memulai aplikasi. Dengan menggunakan  `MaterialApp`, kita menetapkan tema dasar aplikasi dan menentukan bahwa layar awal akan menampilkan `RandomScreen` sebagai `widget` utama. Hal ini mengikuti konsep BLoC, di mana `RandomScreen` bertindak sebagai bagian antarmuka pengguna yang berinteraksi dengan `RandomNumberBloc` untuk mengelola logika terkait angka acak. Dengan menetapkan `widget` utama sebagai `RandomScreen` dalam fungsi `main`, aplikasi memulai alur kerja yang terstruktur sesuai konsep BLoC, di mana logika bisnis dipisahkan dari antarmuka pengguna.
+
+<img src="docs/Praktikum7Soal13.gif" width = 30%></img>
